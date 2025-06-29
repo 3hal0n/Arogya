@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { AppointmentForm } from "@/components/forms/appointmentForm";
 import { getPatient } from "@/lib/actions/patient.actions";
-
+import DoctorCanvas from "@/components/DoctorCanvas";
 const Appointment = async ({ params }: { params: { userId: string } }) => {
   const { userId } = params;
   const patient = await getPatient(userId);
@@ -18,7 +18,7 @@ const Appointment = async ({ params }: { params: { userId: string } }) => {
                     alt="Arogya Logo" 
                     className="h-10 w-10"
                     />
-                    <h1 className="text-xl font-semibold">Arogya</h1>
+                    <h1 className="text-xl text-teal-400 font-semibold">Arogya</h1>
                     </div>
 
           <AppointmentForm
@@ -31,13 +31,16 @@ const Appointment = async ({ params }: { params: { userId: string } }) => {
         </div>
       </section>
 
-      <Image
+      {/* <Image
         src="/assets/images/appointment-img.png"
         height={1500}
         width={1500}
         alt="appointment"
         className="side-img max-w-[390px] bg-bottom"
-      />
+      /> */}
+      <div style={{ width: "50%", height: "100vh" }}>
+              <DoctorCanvas/>
+            </div>
     </div>
   );
 };

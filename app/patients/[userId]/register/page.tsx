@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import RegisterForm from '@/components/forms/RegisterForm'
 import { getUser } from '@/lib/actions/patient.actions'
+import PanelCanvas from '@/components/PanelCanvas'
 
 const register=async({params: {userId}}:SearchParamProps)=>{
   const user=await getUser(userId);
@@ -17,7 +18,7 @@ const register=async({params: {userId}}:SearchParamProps)=>{
           alt="Arogya Logo" 
           className="h-10 w-10"
           />
-          <h1 className="text-xl font-semibold">Arogya</h1>
+           <h1 className="text-2xl font-bold text-teal-400">Arogya</h1>
           </div>
 
           <RegisterForm user={user}/>
@@ -30,12 +31,15 @@ const register=async({params: {userId}}:SearchParamProps)=>{
           </div>
         </div>
       </section>
-      <Image src="/assets/images/register-img.png" 
+      {/* <Image src="/assets/images/register-img.png" 
       height={1000}
       width={1000}
       alt="Arogya register Image" 
       className="side-img  max-w-[390px]"
-      />
+      /> */}
+      <div style={{ width: "50%", height: "100vh" }}>
+              <PanelCanvas/>
+            </div>
     </div>
   )
 }

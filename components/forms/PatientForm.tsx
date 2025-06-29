@@ -256,7 +256,7 @@ const PatientForm = () => {
           type="submit"
           disabled={isSubmitting}
           className={`shadow-lg w-full py-2 px-4 rounded-md transition-colors flex items-center justify-center gap-2 text-white ${
-            isSubmitting ? "bg-green-500 cursor-not-allowed" : "bg-green-500 hover:bg-green-600 hover:shadow-xl"
+            isSubmitting ? "bg-green-500 cursor-not-allowed" : "bg-teal-400 hover:bg-green-600 hover:shadow-xl"
           }`}
         >
           {isSubmitting ? (

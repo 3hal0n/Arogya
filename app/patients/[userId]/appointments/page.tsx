@@ -72,7 +72,7 @@ const AppointmentsPage = ({ params }: { params: { userId: string } }) => {
                 onClick={() => router.push(`/patients/${params.userId}/new-appointment`)}
                 className="rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700"
               >
-                Schedule Your First Appointment
+                Schedule Your Appointment
               </button>
             </div>
           ) : (

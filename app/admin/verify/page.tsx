@@ -52,7 +52,7 @@ const AdminVerifyPage = () => {
               alt="Arogya Logo" 
               className="h-10 w-10"
             />
-            <h1 className="text-xl font-semibold">Arogya</h1>
+            <h1 className="text-xl font-semibold text-teal-400">Arogya</h1>
           </div>
 
           <div className="space-y-6">
@@ -97,12 +97,12 @@ const AdminVerifyPage = () => {
                 <button
                   type="submit"
                   disabled={passkey.length !== 6 || isLoading}
-                  className="shad-primary-btn w-full h-11 rounded-md font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-teal-400 w-full h-11 rounded-md font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isLoading ? "Verifying..." : "Enter Admin Panel"}
                 </button>
                 
-                <button
+                <button 
                   type="button"
                   onClick={goBack}
                   className="shad-gray-btn w-full h-11 rounded-md font-medium"

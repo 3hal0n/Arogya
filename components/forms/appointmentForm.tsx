@@ -134,8 +134,7 @@ export const AppointmentForm = ({
         {type === "create" && (
           <section className="mb-12 space-y-4">
             <h1 className="header">New Appointment</h1>
-            <p className="text-dark-700">
-              Request a new appointment in 10 seconds.
+            <p className="text-dark-700">Book your care in minutes!
             </p>
           </section>
         )}
@@ -210,7 +209,7 @@ export const AppointmentForm = ({
 
         <SubmitButton
           isLoading={isLoading}
-          className={`${type === "cancel" ? "shad-danger-btn" : "shad-primary-btn"} w-full`}
+          className={`${type === "cancel" ? "shad-danger-btn" : "bg-teal-400 hover:bg-teal-500 text-white"} w-full`}
         >
           {buttonLabel}
         </SubmitButton>

@@ -123,9 +123,15 @@ export const getRecentAppointmentList = async () => {
 
     // Map appointments to include the full patient object
     const documents = appointments.documents.map((appointment) => {
-      const patientId = Array.isArray(appointment.patient)
-        ? appointment.patient[0]
-        : appointment.patient;
+      let patientId;
+      if (Array.isArray(appointment.patient)) {
+        const first = appointment.patient[0];
+        patientId = typeof first === 'object' && first !== null ? first.$id : first;
+      } else if (typeof appointment.patient === 'object' && appointment.patient !== null) {
+        patientId = appointment.patient.$id;
+      } else {
+        patientId = appointment.patient;
+      }
       const patient = patientMap.get(patientId);
 
       return {
