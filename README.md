@@ -1,49 +1,95 @@
 # 🏥 Arogya Patient Management System
 
-**Arogya** is a modern, web-based **Patient Management System** built to streamline healthcare workflows for clinics, hospitals, and independent medical practitioners. With a strong focus on usability and automation, Arogya simplifies managing patient records, appointments, and notifications, allowing healthcare providers to deliver efficient, timely care.
+**Arogya** is a modern, web-based Patient Management System designed to streamline healthcare workflows for clinics, hospitals, and independent medical practitioners. With a strong focus on usability, automation, and visual engagement, Arogya simplifies managing patient records, appointments, and notifications — empowering healthcare providers to deliver efficient, timely care.
+
+---
 
 ## 🚀 Key Features
 
-- **📝 Patient Registration**  
-  Secure and intuitive onboarding process for new patients.
+- 📝 **Patient Registration**  
+  Secure and intuitive onboarding with detailed forms and file uploads.
 
-- **📅 Appointment Scheduling**  
-  Book, view, and manage appointments effortlessly.
+- 📅 **Appointment Scheduling**  
+  Book, view, and manage appointments with real-time status tracking.
 
-- **📊 Admin Dashboard**  
-  Centralized dashboard to manage patients, appointments, and users.
+- 📊 **Admin Dashboard**  
+  Centralized dashboard for managing patients, appointments, and users with visual status cards and data tables.
 
-- **🔄 Status Tracking**  
-  Real-time tracking of appointment statuses — pending, confirmed, cancelled, and more.
+- 🔄 **Status Tracking**  
+  Real-time appointment statuses: pending, confirmed, cancelled, and more.
 
-- **📲 Automated SMS Notifications**  
-  Instantly notify patients when appointments are created, updated, or cancelled.
+- 📲 **Automated SMS Notifications**  
+  Notify patients instantly when appointments are created, updated, or cancelled.
 
-- **🔐 User Authentication**  
-  Secure login and verification for both admins and patients using Appwrite.
+- 🔐 **User Authentication**  
+  Secure login and verification for admins and patients using **Appwrite**.
 
-- **📱 Responsive Design**  
-  Optimized for desktop, tablet, and mobile devices.
+- 📱 **Responsive Design**  
+  Fully responsive and optimized for desktop, tablet, and mobile.
 
-- **📎 File Uploads**  
-  Attach and manage patient documents and medical reports.
+- 📎 **File Uploads**  
+  Upload and manage patient documents and medical records.
+
+- 🖼️ **3D Model Integration**  
+  Interactive 3D models (Doctor, Hospital, Lab Machine, Computer) rendered via **React Three Fiber** and **Drei** on landing and success pages.
+
+---
+
+## 🧩 Architecture & Components
+
+- **Frontend:** Built with modern **React** and **Next.js** using the `/app` directory.
+- **Backend:** Powered by **Appwrite** for authentication, database, and serverless functions.
+- **Styling:** Fully styled with **Tailwind CSS**.
+- **Language:** Written in **TypeScript**.
+- **3D Models:** Integrated using **React Three Fiber** and **Drei**, with `.glb` models.
+- **Notifications:** SMS functionality using a third-party **SMS API**.
+
+---
+
+## 🧠 Core Components
+
+### Forms & UI
+- `PatientForm`, `RegisterForm`, `AppointmentForm`: For onboarding and appointment management.
+- `FileUploader`: Uploads patient reports and documents.
+- `AppointmentModal`, `DataTable`, `columns`: For displaying appointment data interactively.
+- `StatusBadge`, `StatCard`, `AdminLogoutButton`: Dashboard elements for admins.
+
+### 3D Model Components
+- `Doctor`, `DoctorCanvas`
+- `Hospital`
+- `Panel`, `PanelCanvas`
+- `Computer`, `ComputerCanvas`
+- `LabMachine`
+
+### Server Actions (`/lib/actions`)
+- `appointment.actions.ts`:  
+  - Create, update, and fetch appointments  
+  - Fetch recent appointments for dashboard  
+  - Send SMS notifications
+
+- `patient.actions.ts`:  
+  - Register patients  
+  - Fetch patient details by user or document ID
+
+- `validation.ts`:  
+  - Zod schemas for patient and appointment form validation
+
+---
 
 ## 🛠️ Tech Stack
 
-| Layer        | Technology                     |
-|--------------|---------------------------------|
-| **Frontend** | [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/) |
-| **Backend**  | [Appwrite](https://appwrite.io/) (Authentication, Database, Functions) |
-| **Styling**  | Tailwind CSS                   |
-| **Language** | TypeScript                     |
-| **Notifications** | SMS API Integration         |
+| Layer       | Technology                                |
+|-------------|-------------------------------------------|
+| Frontend    | Next.js, React, Tailwind CSS, shadcn UI   |
+| Backend     | Appwrite (Auth, DB, Functions)            |
+| Language    | TypeScript                                |
+| Styling     | Tailwind CSS                              |
+| 3D Models   | React Three Fiber, Drei                   |
+| Notifications | SMS API Integration                     |
 
-## 🧩 Architecture
+---
 
-- **Component-based design** using modern React/Next.js best practices.
-- **Serverless backend** powered by Appwrite functions for speed and scalability.
-- **Secure authentication** and role-based access control for patients and admins.
-- **Decoupled design** for easy integration with external APIs or services.
+## 📸 Screenshots
 
-**Arogya** helps healthcare providers focus more on patients and less on paperwork.  
-*Built with ❤️ for modern clinics and hospitals.*
+Included under snippets folder
+---
